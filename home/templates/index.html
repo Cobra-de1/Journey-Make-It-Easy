@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script type="text/javascript" src="{% static 'js/chunk-vendors.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+    <script>
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('shadow', window.scrollY > 0);
+        })
+    </script>
+</body>
+
+</html>
